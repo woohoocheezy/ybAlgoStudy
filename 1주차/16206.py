@@ -8,21 +8,45 @@ cakes.sort()
 count = m
 available_cakes = 0
 
-for a_cake in cakes:
-    if a_cake == 10:
+for a_cakes in cakes :
+    if a_cakes == 10 :
         available_cakes += 1
-        continue
 
-    if a_cake % 10 == 0:
-        a_cake_pieces = a_cake // 10
-        if a_cake_pieces < count:
-            count -= a_cake_pieces
-            available_cakes += a_cake_pieces
-        elif a_cake_pieces == count:
-            print(available_cakes)
-            break
+    elif a_cakes % 10 == 0 :
+        if (a_cakes // 10 ) - 1 == count :
+            # print("#", count)
+            available_cakes += count + 1
+            count 
+            # print(available_cakes)
+            # break
+
+        elif (a_cakes // 10 ) - 1 < count :
+            # print("@", count)
+        # else :
+            available_cakes += a_cakes // 10
+            count -= a_cakes // 10 - 1
+
+        else : # a_cakes // 10 > count 
+            # print("^", count)
+            available_cakes += count
+            count 
+            # print(available_cakes)
+            # break
+
+    else :
+        if a_cakes // 10 == count :
+            # print("%", count)
+            available_cakes += count
+            # print(available_cakes)
+            # break
+        elif a_cakes // 10 < count :
+            # print("$", count)
+            available_cakes += a_cakes // 10
+            count -= a_cakes // 10 
         else:
+            # print("*", count)
             available_cakes += count
             print(available_cakes)
             break
-    print(f"count : {count} available_cakes : {available_cakes}")
+else:
+    print(available_cakes)
